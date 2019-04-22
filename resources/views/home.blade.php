@@ -15,6 +15,7 @@
                     @endif
 
                     You are logged in!
+                 <button type="btn btn-primary" onclick="window.location='{{ url("/login") }}'">Proceed</button>
                 </div>
             </div>
         </div>

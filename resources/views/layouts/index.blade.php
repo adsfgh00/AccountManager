@@ -5,14 +5,15 @@
 	<title>Document</title>
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">	
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">	
-	  <a class="navbar-brand" href="#">Account Manager</a>	
+	  <a class="navbar-brand" href="#">Hi, {{ Auth::user()->first_name }}</a>	
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="	false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
-      <a class="btn btn-primary" href="{{ route('logout') }}"onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+      <a class="btn btn-danger" href="{{ route('logout') }}"onclick="event.preventDefault();document.getElementById('logout-form').submit();">
           {{ __('Logout') }}
       </a>
 
@@ -31,17 +32,20 @@
     				        <th>First Name</th>
     				        <th>Last Name</th>
     				        <th>Middle Initial</th>
+    				        <th>Options</th>
     				    </tr>
     				</thead>
     			
     				<tbody>
 						@foreach($users as $row)
     						<tr>    
-    						  <th>{{$row->id}}</th>
-    						  <th>{{$row->username}}</th>
-    						  <th>{{$row->first_name}}</th>
-    						  <th>{{$row->last_name}}</th>
-    						  <th>{{$row->middle_initial}}</th>                 
+    						  <td>{{$row->id}}</td>
+    						  <td>{{$row->username}}</td>
+    						  <td>{{$row->first_name}}</td>
+    						  <td>{{$row->last_name}}</td>
+    						  <td>{{$row->middle_initial}}</td>
+    						  <td><a href="#"><i class="fas fa-user-edit"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" style="color:red"><i class="far fa-trash-alt"></i></a>
+    						  </td>                 
     						</tr>
     				    @endforeach
     				</tbody>
