@@ -52,7 +52,7 @@ class RegisterController extends Controller
             'username' => ['required', 'string', 'max:255', 'unique:users'],
             'first_name' => ['required', 'string', 'max:255'],
             'last_name' => ['required', 'string', 'max:255'],
-            'middle_initial' => ['required', 'string', 'max:1'],
+            'middle_initial' => ['nullable','string', 'max:1'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }

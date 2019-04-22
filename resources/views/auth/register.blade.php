@@ -57,7 +57,7 @@
                             <label for="middle_initial" class="col-md-4 col-form-label text-md-right">{{ __('M.I.') }}</label>
 
                             <div class="col-md-6">
-                                <input id="middle_initial" type="text" class="form-control{{ $errors->has('middle_initial') ? ' is-invalid' : '' }}" name="middle_initial" value="{{ old('middle_initial') }}" required autocomplete="middle_initial" autofocus>
+                                <input id="middle_initial" type="text" class="form-control{{ $errors->has('middle_initial') ? ' is-invalid' : '' }}" name="middle_initial" value="{{ old('middle_initial') }}">
 
                                 @if ($errors->has('middle_initial'))
                                     <span class="invalid-feedback" role="alert">
