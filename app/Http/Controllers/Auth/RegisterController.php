@@ -72,5 +72,6 @@ class RegisterController extends Controller
             'middle_initial' => $data['middle_initial'],
             'password' => bcrypt($data['password']),
         ]);
+        $this->getData();
     }
 }
